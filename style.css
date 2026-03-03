@@ -1,0 +1,36 @@
+
+    .tab-active {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+    }
+    .tab-inactive {
+      background: #f8fafc;
+      color: #1e3a5f;
+    }
+    .tab-inactive:hover {
+      background: #e8f0f8;
+    }
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e8f0f8;
+    }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2);
+    }
+    .skill-bar {
+      background: linear-gradient(90deg, #1e3a5f 0%, #2d5a87 100%);
+      border-radius: 10px;
+      transition: width 0.8s ease;
+    }
+    .profile-ring {
+      background: linear-gradient(135deg, #c9a227 0%, #dbb847 50%, #c9a227 100%);
+      padding: 4px;
+      border-radius: 50%;
+    }
