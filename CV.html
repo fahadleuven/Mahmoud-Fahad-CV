@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmoud Fahad- CV</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- <script src="/_sdk/element_sdk.js"></script> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    .tab-active {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+    }
+    .tab-inactive {
+      background: #f8fafc;
+      color: #1e3a5f;
+    }
+    .tab-inactive:hover {
+      background: #e8f0f8;
+    }
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e8f0f8;
+    }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2);
+    }
+    .skill-bar {
+      background: linear-gradient(90deg, #1e3a5f 0%, #2d5a87 100%);
+      border-radius: 10px;
+      transition: width 0.8s ease;
+    }
+    .profile-ring {
+      background: linear-gradient(135deg, #c9a227 0%, #dbb847 50%, #c9a227 100%);
+      padding: 4px;
+      border-radius: 50%;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <!-- <script src="/_sdk/data_sdk.js" type="text/javascript"></script> -->
+ </head>
+ <body class="h-full" style="font-family: 'DM Sans', sans-serif;">
+  <div id="app-wrapper" class="h-full w-full overflow-auto" style="background: linear-gradient(180deg, #f0f4f8 0%, #e8f0f8 100%);">
+   <!-- Header Section -->
+   <header class="w-full" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%); padding: 40px 20px;">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+     <!-- Profile Picture -->
+     <div class="profile-ring flex-shrink-0">
+      <div id="profile-picture" class="w-44 h-44 rounded-full flex items-center justify-center text-5xl" style="background: linear-gradient(135deg, #e8f0f8 0%, #f8fafc 100%);">
+       <img src="images/Mahmoud Fahad.jpg" alt="Profile Picture" class="w-44 h-44 object-cover rounded-full">
+      </div>
+     </div><!-- Name and Title -->
+     <div class="text-center md:text-left">
+      <h1 id="display-name" class="text-4xl md:text-5xl font-bold text-white mb-2" style="font-family: 'Crimson Pro', serif;">Mahmoud Fahad</h1>
+      <p id="display-title" class="text-xl" style="color: #c9a227; font-weight: 500;">SOFTWARE ENGINEER | MACHINE LERNING & DATA
+ANALYST | FULL-STACK DEVELOPER</p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
+       <span class="flex items-center gap-2 text-white/80 text-sm"> <span>📧</span> fahadmahmoud86@gmail.com </span> <span class="flex items-center gap-2 text-white/80 text-sm"> <span>📱</span> +32 466 497 522 </span> <span class="flex items-center gap-2 text-white/80 text-sm"> <span>📍</span> Leuven, Belgium </span>
+      </div>
+     </div>
+    </div>
+   </header><!-- Language Selector -->
+   <div class="w-full" style="background: #f8fafc; padding: 12px 20px; border-bottom: 1px solid #e8f0f8;">
+    <div class="max-w-5xl mx-auto flex justify-end gap-2">
+     <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1 rounded-full text-xs font-semibold transition-all" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%); color: white;"> EN </button> <button onclick="setLanguage('nl')" id="lang-nl" class="px-3 py-1 rounded-full text-xs font-semibold transition-all" style="background: white; color: #1e3a5f; border: 1px solid #e8f0f8;"> NL </button>
+    </div>
+   </div>
+   <nav class="w-full sticky top-0 z-10" style="background: rgba(240, 244, 248, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e8f0f8;">
+    <div class="max-w-5xl mx-auto px-4 py-3">
+     <div class="flex flex-wrap justify-center gap-2">
+      <button onclick="showTab('about')" id="tab-about" class="tab-active px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"><span class="tab-text">About Me</span></button> <button onclick="showTab('experience')" id="tab-experience" class="tab-inactive px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"><span class="tab-text">Experience</span></button> <button onclick="showTab('education')" id="tab-education" class="tab-inactive px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"><span class="tab-text">Education</span></button> <button onclick="showTab('skills')" id="tab-skills" class="tab-inactive px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"><span class="tab-text">Skills</span></button>
+     </div>
+    </div>
+   </nav><!-- Main Content -->
+   <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- About Me Tab -->
+    <div id="content-about" class="tab-content">
+     <div class="grid md:grid-cols-2 gap-6">
+      <!-- About Me Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">👋</span> <span data-translate="aboutMeHeading">About Me</span></h2>
+       <p id="display-about" data-translate="aboutParagraph" class="leading-relaxed" style="color: #4a5568;">As a highly motivated
+professional eager to
+embrace new
+challenges, I bring a
+robust work ethic,
+adaptability, and
+exceptional
+communication skills
+to the table. I excel
+in unsupervised work
+environments and am
+adept at swiftly
+mastering new skills.
+My proficiency in
+communicating complex
+technical details to
+non-technical
+stakeholders sets me
+apart, ensuring
+seamless
+collaboration and
+understanding across
+diverse teams.</p>
+      </div><!-- Personal Details Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">📋</span> <span data-translate="personalDetails">Personal Details</span></h2>
+       <div class="space-y-3">
+        <div class="flex justify-between py-2 border-b" style="border-color: #e8f0f8;">
+         <span style="color: #718096;" data-translate="dateOfBirth">Date of Birth</span> <span style="color: #1e3a5f; font-weight: 500;">September 11, 1986</span>
+        </div>
+        <div class="flex justify-between py-2 border-b" style="border-color: #e8f0f8;">
+         <span style="color: #718096;" data-translate="nationality">Nationality</span> <span data-translate="belgian" style="color: #1e3a5f; font-weight: 500;">Belgian</span>
+        </div>
+        <div class="flex justify-between py-2 border-b" style="border-color: #e8f0f8;">
+         <span style="color: #718096;" data-translate="address">Address</span> <span style="color: #1e3a5f; font-weight: 500;">Mechelsestraat, Leuven</span>
+        </div>
+        <div class="flex justify-between py-2">
+         <span style="color: #718096;" data-translate="maritalStatus">Marital Status</span> <span data-translate="single" style="color: #1e3a5f; font-weight: 500;">Single</span>
+        </div>
+       </div>
+      </div><!-- Driving License Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">🚗</span> <span data-translate="drivingLicense">Driving License</span></h2>
+       <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: #e8f0f8; color: #1e3a5f;" data-translate="classB"> Class B - Car </span> <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: #e8f0f8; color: #1e3a5f;" data-translate="classA"> Class A - Motorcycle </span>
+       </div>
+      </div><!-- Languages Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">🌍</span> <span data-translate="languages">Languages</span></h2>
+       <div class="space-y-4">
+        <div>
+         <div class="flex justify-between mb-1">
+          <span data-translate="english" style="color: #1e3a5f; font-weight: 500;">English</span> <span style="color: #718096; font-size: 0.875rem;" data-translate="professional">Professional</span>
+         </div>
+         <div class="w-full h-2 rounded-full" style="background: #e8f0f8;">
+          <div class="skill-bar h-full" style="width: 100%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-1">
+          <span data-translate="dutch" style="color: #1e3a5f; font-weight: 500;">Dutch</span> <span style="color: #718096; font-size: 0.875rem;" data-translate="professional">Professional</span>
+         </div>
+         <div class="w-full h-2 rounded-full" style="background: #e8f0f8;">
+          <div class="skill-bar h-full" style="width: 100%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-1">
+          <span data-translate="french" style="color: #1e3a5f; font-weight: 500;">French</span> <span style="color: #718096; font-size: 0.875rem;" data-translate="intermediate">Intermediate</span>
+         </div>
+         <div class="w-full h-2 rounded-full" style="background: #e8f0f8;">
+          <div class="skill-bar h-full" style="width: 60%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-1">
+          <span data-translate="arabic"="color: #1e3a5f; font-weight: 500;">Arabic</span> <span style="color: #718096; font-size: 0.875rem;" data-translate="native">Native</span>
+         </div>
+         <div class="w-full h-2 rounded-full" style="background: #e8f0f8;">
+          <div class="skill-bar h-full" style="width: 100%;"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Social Links Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">🔗</span> <span data-translate="websites">Websites &amp; Social Links</span></h2>
+       <div class="space-y-3">
+        <a href="https://www.linkedin.com/in/mahmoud-fahad-b20708265/" class="flex items-center gap-3 p-3 rounded-lg transition-all hover:translate-x-2" style="background: #f8fafc;"> <span class="text-2xl"><i class="fa-brands fa-linkedin"></i></span>
+         <div>
+          <p style="color: #1e3a5f; font-weight: 500;" data-translate="linkedin">LinkedIn</p>
+           <p style="color: #718096; font-size: 0.875rem;">https://www.linkedin.com/in/mahmoud-fahad-b20708265/</p>
+         </div><a href="https://github.com/fahadleuven" class="flex items-center gap-3 p-3 rounded-lg transition-all hover:translate-x-2" style="background: #f8fafc;"> <span class="text-2xl"><i class="fa-brands fa-github"></i></span>
+         <div>
+          <p style="color: #1e3a5f; font-weight: 500;" data-translate="github">GitHub</p>
+          <p style="color: #718096; font-size: 0.875rem;">github.com/fahadleuven</p>
+         </div></a> 
+         <!-- <a href="#" class="flex items-center gap-3 p-3 rounded-lg transition-all hover:translate-x-2" style="background: #f8fafc;"> <span class="text-2xl">🌐</span>
+         <div>
+          <p style="color: #1e3a5f; font-weight: 500;" data-translate="portfolio">Portfolio</p>
+          <p style="color: #718096; font-size: 0.875rem;">www.yourportfolio.com</p>
+         </div></a> -->
+       </div>
+      </div><!-- References Card -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-4 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">📝</span> <span data-translate="references">References</span></h2>
+       <div class="space-y-4">
+        <div class="p-4 rounded-lg" style="background: #f8fafc;">
+         <p style="color: #1e3a5f; font-weight: 600;">Filip Volckaert</p>
+         <p style="color: #718096; font-size: 0.875rem;">Head of the laboratory
+Laboratory of Biodiversity and Evolutionary Genomics, KULeuven</p>
+         <p style="color: #718096; font-size: 0.875rem;">📧 filip.volckaert@kuleuven.be</p>
+         <p style="color: #718096; font-size: 0.875rem;">📱  +32 16 32 39 72, +32 16 32 39 66</p>
+        </div>
+        <div class="p-4 rounded-lg" style="background: #f8fafc;">
+         <p style="color: #1e3a5f; font-weight: 600;">Arn Mignon</p>
+         <p style="color: #718096; font-size: 0.875rem;">Associate professor Faculty of Engineering Technology, KULeuven</p>
+         <p style="color: #718096; font-size: 0.875rem;">📧 arn.mignon@kuleuven.be</p>
+         <p style="color: #718096; font-size: 0.875rem;">📱 +32 16 32 21 10</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Experience Tab -->
+<div id="content-experience" class="tab-content hidden">
+  <div class="section-card p-6">
+
+    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" 
+        style="color: #1e3a5f; font-family: 'Crimson Pro', serif;">
+      <span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" 
+            style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">💼</span>
+      <span data-translate="workExperience">Work Experience</span>
+    </h2>
+
+    <div class="space-y-8">
+
+      <!-- Experience Item 1 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span data-translate="present"="px-3 py-1 rounded-full text-xs font-medium"
+                style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%); color: white;">
+            Dec 2025 - Present
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Full-Stack Developer</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+
+        <p class="leading-relaxed" data-translate="experience1" style="color: #4a5568;">
+          Worked as a Full-Stack Developer at KU Leuven – Group T within the Smart
+          Polymeric Biomaterials Research Group, developing and maintaining
+          web-based applications to support research activities. Collaborated
+          with multidisciplinary teams to translate research requirements into
+          technical solutions, contributing to data management, visualization,
+          and efficient research workflows.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">JavaScript</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Node.js</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">HTML</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">CSS</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Supabase</span>
+        </div>
+      </div>
+
+      <!-- Experience Item 2 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Feb 2025 - Jun 2025
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Data Analyst</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">RISKCONCILE</p>
+
+        <p class="leading-relaxed" data-translate="experience2" style="color: #4a5568;">
+          Data Analyst Intern at RiskConcile, working with Power BI, Tableau,
+          Excel, and Python to analyze and visualize data for informed
+          decision-making.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">PowerBI</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Python</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Excel</span>
+        </div>
+      </div>
+
+      <!-- Experience Item 3 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Jun 2023 - Sep 2023
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">
+          3D Environments Designer (Student Job)
+        </h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+
+        <p class="leading-relaxed" data-translate="experience3" style="color: #4a5568;">
+          Partnered with VTS Editor to create advanced 3D simulations,
+          delivering immersive, Metaverse-like assessments for enhanced
+          student exam experiences.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">VTS Editor</span>
+        </div>
+      </div>
+
+      <!-- Experience Item 4 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Jan 2023- Jun 2023
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Machine Learning Engineer</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+
+        <p class="leading-relaxed" data-translate="experience4" style="color: #4a5568;">
+          Completed a master’s thesis, “An
+Empirical Study of Few-Shot Named Entity
+Recognition Baselines,” applying machine
+learning and NLP. Built and tested
+Python/PyTorch models on multilingual
+datasets (English, German, Chinese),
+analyzing cross-language performance and
+adaptability.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">PyTorch</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Python</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Natural Language Processing</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Google Colab</span>
+        </div>
+      </div>
+
+       <!-- Experience Item 5 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Sep 2021- Jan 2022
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Software Developer</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+
+        <p class="leading-relaxed"data-translate="experience5" style="color: #4a5568;">
+          Created "Spotifit," a Java-based human-machine interaction software that
+analyzes Spotify profiles to recommend
+music. Integrated user feedback across
+age groups to refine and enhance
+functionality.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Java</span>
+         
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">MySQL</span>
+        </div>
+      </div>
+      <!-- Experience Item 6 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Feb 2021- Jun 2021
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Software Developer</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+
+        <p class="leading-relaxed" data-translate="experience6" style="color: #4a5568;">
+         Developed "Browsr," a lightweight
+browser using Java and HTML, supporting
+basic web page display with features
+like scrolling, page splitting, and
+bookmarks.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Java</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">HTML</span>
+        </div>
+      </div>
+
+       <!-- Experience Item 7 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Sep 2018- Apr 2020
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">Student Job</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">ALMA-KULEUVEN</p>
+
+        <p class="leading-relaxed" style="color: #4a5568;">
+         
+        </p>
+
+        
+      </div>
+<!-- Experience Item 8 -->
+      <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+
+        <div class="mb-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium"
+                style="background:#e8f0f8;color:#1e3a5f;">
+            Jan 2009- Jun 2016
+          </span>
+        </div>
+
+        <h3 class="text-xl font-bold" style="color: #1e3a5f;">IT Support Engineer</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">GENERAL COMPANY
+FOR INDUSTRY</p>
+
+        <p class="leading-relaxed" data-translate="experience7" style="color: #4a5568;">
+         Handled IT infrastructure by
+troubleshooting hardware, software, and
+network issues, managing user accounts,
+ensuring connectivity, implementing
+security measures, performing data
+backups, and providing user training and
+documentation for seamless operations.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Access</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Windows</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Word</span>
+          <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Excel</span>
+           <span class="px-3 py-1 rounded-full text-xs" style="background:#e8f0f8;color:#1e3a5f;">Hardware</span>
+
+        </div>
+      </div>
+
+
+    </div> <!-- END space-y-8 -->
+
+  </div>
+</div>
+   <!-- Education Tab -->
+    <div id="content-education" class="tab-content hidden">
+     <div class="section-card p-6">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">🎓</span> <span data-translate="educationHeading">Education</span></h2>
+      <div class="space-y-8">
+       <!-- Education Item 1 -->
+       <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+        <div class="mb-2">
+         <span class="px-3 py-1 rounded-full text-xs font-medium" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%); color: white;"> 2025 </span>
+        </div>
+        <h3 class="text-xl font-bold" data-translate="master1title" style="color: #1e3a5f;">Master in Information Management</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+        <p style="color: #4a5568;" data-translate="summrymaster1" class="leading-relaxed">Focuses on combining business and technology. It specializes in data management, digital transformation, business analytics, and aligning IT with business strategy.</p>
+        
+       </div>
+       <!-- Education Item 2 -->
+       <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+        <div class="mb-2">
+         <span class="px-3 py-1 rounded-full text-xs font-medium" style="background: #e8f0f8; color: #1e3a5f;"> 2023 </span>
+        </div>
+        <h3 class="text-xl font-bold" data-translate="master2title" style="color: #1e3a5f;">Master in Applied Informatics</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+        <p style="color: #4a5568;" data-translate="summrymaster2" class="leading-relaxed">Specializing in Artificial Intelligence, focuses on machine learning, intelligent systems, and AI applications.</p>
+        
+       </div>
+<!-- Education Item 3 -->
+<div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+        <div class="mb-2">
+         <span class="px-3 py-1 rounded-full text-xs font-medium" style="background: #e8f0f8; color: #1e3a5f;"> 2023 </span>
+        </div>
+        <h3 class="text-xl font-bold" data-translate="COMPUS19title" style="color: #1e3a5f;">Software Developing</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">COMPUS19
+Antwerp</p>
+        <p style="color: #4a5568;" data-translate="summryCOMPUS19" class="leading-relaxed">Participated in a hands-on coding and software development programme, learning through real projects, peer collaboration, and practical challenges to build skills in software engineering and IT problem-solving.</p>
+        
+       </div>
+
+ <!-- Education Item 4 -->
+       <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+        <div class="mb-2">
+         <span class="px-3 py-1 rounded-full text-xs font-medium" style="background: #e8f0f8; color: #1e3a5f;"> 2021 </span>
+        </div>
+        <h3 class="text-xl font-bold" data-translate="bridgingtitle" style="color: #1e3a5f;">Bridging Programme in Applied Informatics</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">KULEUVEN</p>
+        <p style="color: #4a5568;" data-translate="summrybridging" class="leading-relaxed">A preparatory programme covering mathematics, programming, computer science fundamentals, and introductory AI.</p>
+        
+       </div>
+      
+       
+       <!-- Education Item 5 -->
+       <div class="relative pl-8 border-l-2" style="border-color: #e8f0f8;">
+        <div class="timeline-dot absolute -left-[7px] top-0"></div>
+        <div class="mb-2">
+         <span class="px-3 py-1 rounded-full text-xs font-medium" style="background: #e8f0f8; color: #1e3a5f;"> 2008 </span>
+        </div>
+        <h3 class="text-xl font-bold" data-translate="bachelortitle" style="color: #1e3a5f;">Bachelor in Computer Science</h3>
+        <p class="font-medium mb-2" style="color: #2d5a87;">COMPUTER
+TECHNOLOGY
+COLLEGE- Mosul</p>
+        <p style="color: #4a5568;" data-translate="summrybachelor" class="leading-relaxed">Solid foundation in programming, algorithms, databases, and software development.</p>
+        
+       </div>
+
+       
+
+
+      </div><!-- Certifications -->
+      <div class="mt-8 pt-6 border-t" style="border-color: #e8f0f8;">
+       <h3 class="text-xl font-bold mb-4 flex items-center gap-2" data-translate="certifications" style="color: #1e3a5f;"><span>🏆</span> Certifications</h3>
+       <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-lg" style="background: #f8fafc;">
+         <p style="color: #1e3a5f; font-weight: 600;">IC³ (Internet and Computing Core Certification)</p>
+         <p style="color: #718096; font-size: 0.875rem;">Certiport Authorized Testing Center • 2015</p>
+        </div>
+        <!-- <div class="p-4 rounded-lg" style="background: #f8fafc;">
+         <p style="color: #1e3a5f; font-weight: 600;">Google Cloud Professional</p>
+         <p style="color: #718096; font-size: 0.875rem;">Google • 2022</p>
+        </div> -->
+        
+       </div>
+      </div>
+     </div>
+    </div><!-- Skills Tab -->
+    <div id="content-skills" class="tab-content hidden">
+     <div class="grid md:grid-cols-2 gap-6">
+      <!-- Technical Skills -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" data-translate="technicalSkills" style="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">💻</span> Technical Skills</h2>
+       <div class="space-y-6">
+        <div>
+         <h4 class="font-semibold mb-3" data-translate="programmingLanguages" style="color: #1e3a5f; font-size: 0.95rem;">Programming Languages</h4>
+         <div class="space-y-3">
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Python</span> <span style="color: #718096; font-size: 0.875rem;">92%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 92%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Java</span> <span style="color: #718096; font-size: 0.875rem;">88%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 88%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">C++</span> <span style="color: #718096; font-size: 0.875rem;">85%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 85%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">JavaScript</span> <span style="color: #718096; font-size: 0.875rem;">95%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 95%;"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="border-top: 1px solid #e8f0f8; padding-top: 1rem;">
+         <h4 class="font-semibold mb-3" style="color: #1e3a5f; font-size: 0.95rem;">Web &amp; Database</h4>
+         <div class="space-y-3">
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">CSS / HTML</span> <span style="color: #718096; font-size: 0.875rem;">93%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 93%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">SQL</span> <span style="color: #718096; font-size: 0.875rem;">90%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 90%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Git / GitHub</span> <span style="color: #718096; font-size: 0.875rem;">94%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 94%;"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="border-top: 1px solid #e8f0f8; padding-top: 1rem;">
+         <h4 class="font-semibold mb-3" style="color: #1e3a5f; font-size: 0.95rem;">AI &amp; Data Science</h4>
+         <div class="space-y-3">
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Machine Learning</span> <span style="color: #718096; font-size: 0.875rem;">87%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 87%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Artificial Intelligence (AI)</span> <span style="color: #718096; font-size: 0.875rem;">86%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 86%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Computer Vision</span> <span style="color: #718096; font-size: 0.875rem;">84%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 84%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Data Analysis</span> <span style="color: #718096; font-size: 0.875rem;">89%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 89%;"></div>
+           </div>
+          </div>
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">Algorithms &amp; Data Structures</span> <span style="color: #718096; font-size: 0.875rem;">91%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 91%;"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="border-top: 1px solid #e8f0f8; padding-top: 1rem;">
+         <h4 class="font-semibold mb-3" data-translate="other"="color: #1e3a5f; font-size: 0.95rem;">Other</h4>
+         <div class="space-y-3">
+          <div>
+           <div class="flex justify-between mb-1">
+            <span style="color: #1e3a5f; font-weight: 500;">CISCO</span> <span style="color: #718096; font-size: 0.875rem;">80%</span>
+           </div>
+           <div class="w-full h-3 rounded-full" style="background: #e8f0f8;">
+            <div class="skill-bar h-full" style="width: 80%;"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Soft Skills -->
+      <div class="section-card p-6">
+       <h2 class="text-2xl font-bold mb-6 flex items-center gap-3" data-translate="softSkills"="color: #1e3a5f; font-family: 'Crimson Pro', serif;"><span class="w-10 h-10 rounded-full flex items-center justify-center text-lg" style="background: linear-gradient(135deg, #c9a227 0%, #dbb847 100%);">🤝</span> Soft Skills</h2>
+       <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="leadership" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Leadership </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="communication" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Communication </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="problemSolving" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Problem Solving </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="teamCollaboration" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Team Collaboration </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="timeManagement" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Time Management </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="criticalThinking" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Critical Thinking </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="adaptability" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Adaptability </span> <span class="px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" data-translate="creativity" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white;"> Creativity </span>
+       </div><!-- Tools & Technologies -->
+       <h3 class="text-xl font-bold mt-8 mb-4" data-translate="toolsAndTechnologies" style="color: #1e3a5f;">Tools &amp; Technologies</h3>
+       <div class="grid grid-cols-3 gap-3">
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl"><i class="fab fa-python"></i> </span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">Python</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl"><i class="fab fa-java"></i></span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">Java</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl"><i class="fab fa-cuttlefish"></i></span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">C++</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105 flex flex-col items-center justify-center"
+     style="background: #f8fafc;">
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+       width="24"
+       height="24"
+       class="mx-auto">
+
+  <p class="text-xs mt-1" style="color: #1e3a5f;">TensorFlow</p>
+
+</div>
+        <div class="p-3 rounded-lg flex flex-col items-center justify-center transition-transform hover:scale-105"
+     style="background: #f8fafc;">
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+       width="28"
+       height="28"
+       alt="OpenCV">
+
+  <p class="text-xs mt-1" style="color: #1e3a5f;">OpenCV</p>
+
+</div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">📊</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">PowerBI</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">⚡</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">RapidMiner</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">📈</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">Celonis</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">🔄</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">Signavio</p>
+        </div>
+        <div class="p-3 rounded-lg flex flex-col items-center justify-center transition-transform hover:scale-105"
+     style="background: #f8fafc;">
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+       class="w-7 h-7 object-contain"
+       alt="Git">
+
+  <p class="text-xs mt-1" style="color: #1e3a5f;">Git</p>
+
+</div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">🌐</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">CISCO</p>
+        </div>
+        <div class="p-3 rounded-lg text-center transition-transform hover:scale-105" style="background: #f8fafc;">
+         <span class="text-2xl">🎨</span>
+         <p class="text-xs mt-1" style="color: #1e3a5f;">CSS/HTML</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main><!-- Footer -->
+   <footer class="w-full py-6 text-center" style="background: #1e3a5f; color: white;">
+    <p class="text-sm opacity-80">© 2026 Mahmoud Fahad. All rights reserved.</p>
+   </footer>
+  </div>
+
+  
+  <script>
+    const defaultConfig = {
+      full_name: 'Your Name',
+      job_title: 'Professional Title',
+      about_text: 'Passionate professional with extensive experience in delivering high-quality results. Dedicated to continuous learning and growth, with a strong commitment to excellence in every project undertaken.',
+      primary_color: '#1e3a5f',
+      secondary_color: '#2d5a87',
+      accent_color: '#c9a227',
+      text_color: '#4a5568',
+      background_color: '#f0f4f8',
+      font_family: 'DM Sans',
+      language: 'en'
+      
+    };
+
+    let config = { ...defaultConfig };
+
+    const translations = {
+      en: {
+        aboutMe: 'About Me',
+        experience: 'Experience',
+        education: 'Education',
+        skills: 'Skills',
+        aboutMeHeading: 'About Me',
+        personalDetails: 'Personal Details',
+        drivingLicense: 'Driving License',
+        languages: 'Languages',
+        websites: 'Websites & Social Links',
+        references: 'References',
+        workExperience: 'Work Experience',
+        educationHeading: 'Education',
+        certifications: '🏆 Certifications',
+        technicalSkills: 'Technical Skills',
+        softSkills: 'Soft Skills',
+        toolsAndTechnologies: 'Tools & Technologies',
+        programmingLanguages: 'Programming Languages',
+        webAndDatabase: 'Web & Database',
+        aiAndDataScience: 'AI & Data Science',
+        other: 'Other',
+        dateOfBirth: 'Date of Birth',
+        nationality: 'Nationality',
+        address: 'Address',
+        maritalStatus: 'Marital Status',
+        classB: 'Class B - Car',
+        classA: 'Class A - Motorcycle',
+        native: 'Native',
+        professional: 'Professional',
+        intermediate: 'Intermediate',
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        portfolio: 'Portfolio',
+        aboutParagraph: 'As a highly motivated professional eager to embrace new challenges, I bring a robust work ethic, adaptability, and exceptional communication skills to the table. I excel in unsupervised work environments and am adept at swiftly mastering new skills. My proficiency in communicating complex technical details to non-technical stakeholders sets me apart, ensuring seamless collaboration and understanding across diverse teams.',
+        belgian:'Belgian',
+        single:'Single',
+        english:'English',
+        dutch:'Dutch',
+        french:'French', 
+        arabic:'Arabic',
+        present:'2025-Present',
+        experience1:'Worked as a Full-Stack Developer at KU Leuven – Group T within the Smart Polymeric Biomaterials Research Group, developing and maintaining web-based applications to support research activities. Collaborated with multidisciplinary teams to translate research requirements into technical solutions, contributing to data management, visualization, and efficient research workflows.',
+        experience2:'Data Analyst Intern at RiskConcile, working with Power BI, Tableau, Excel, and Python to analyze and visualize data for informed decision-making.',
+        experience3:'Partnered with VTS Editor to create advanced 3D simulations, delivering immersive, Metaverse-like assessments for enhanced student exam experiences.',
+        experience4:'Completed a master’s thesis, “An Empirical Study of Few-Shot Named Entity Recognition Baselines,” applying machine learning and NLP. Built and tested Python/PyTorch models on multilingual datasets (English, German, Chinese), analyzing cross-language performance and adaptability.',
+        experience5:'Created "Spotifit," a Java-based human-machine interaction software that analyzes Spotify profiles to recommend music. Integrated user feedback across age groups to refine and enhance functionality.',
+        experience6:'Developed "Browsr," a lightweight browser using Java and HTML, supporting basic web page display with features like scrolling, page splitting, and bookmarks.',
+        experience7:'Handled IT infrastructure by troubleshooting hardware, software, and network issues, managing user accounts, ensuring connectivity, implementing security measures, performing data backups, and providing user training and documentation for seamless operations.',
+        master1title:'Master in Information Management',
+        summrymaster1:'Focuses on combining business and technology. It specializes in data management, digital transformation, business analytics, and aligning IT with business strategy.',
+        master2title:'Master in Applied Informatics',
+        summrymaster2:'Focuses on the practical application of informatics principles in real-world scenarios, emphasizing software development, data analysis, and digital solutions.',
+        COMPUS19title:'Software Developing',
+        summryCOMPUS19:'Participated in a hands-on coding and software development programme, learning through real projects, peer collaboration, and practical challenges to build skills in software engineering and IT problem-solving.',
+        bridgingtitle:'Bridging Programme in Applied Informatics',
+        summrybridging:'A preparatory programme covering mathematics, programming, computer science fundamentals, and introductory AI.',
+        bachelortitle:'Bachelor in Computer Science',
+        summrybachelor:'Solid foundation in programming, algorithms, databases, and software development.',
+        other:'Other',
+        ledership:'Leadership',
+        communication:'Communication',
+        problemSolving:'Problem Solving',
+        teamCollaboration:'Team Collaboration',
+        timeManagement:'Time Management',
+        criticalThinking:'Critical Thinking',
+        adaptability:'Adaptability',
+        creativity:'Creativity'
+      },
+      nl: {
+        aboutMe: 'Over Mij',
+        experience: 'Ervaring',
+        education: 'Onderwijs',
+        skills: 'Vaardigheden',
+        aboutMeHeading: 'Over Mij',
+        personalDetails: 'Persoonlijke Gegevens',
+        drivingLicense: 'Rijbewijs',
+        languages: 'Talen',
+        websites: 'Websites & Sociale Media',
+        references: 'Referenties',
+        workExperience: 'Werkervaring',
+        educationHeading: 'Onderwijs',
+        certifications: '🏆 Certificeringen',
+        technicalSkills: 'Technische Vaardigheden',
+        softSkills: 'Soft Vaardigheden',
+        toolsAndTechnologies: 'Gereedschappen & Technologieën',
+        programmingLanguages: 'Programmeertalen',
+        webAndDatabase: 'Web & Database',
+        aiAndDataScience: 'AI & Data Science',
+        other: 'Overig',
+        dateOfBirth: 'Geboortedatum',
+        nationality: 'Nationaliteit',
+        address: 'Adres',
+        maritalStatus: 'Burgerlijke Status',
+        classB: 'Klasse B - Auto',
+        classA: 'Klasse A - Motorfiets',
+        native: 'Moedertaal',
+        professional: 'Professioneel',
+        intermediate: 'Intermediair',
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        portfolio: 'Portfolio',
+        aboutParagraph: 'Als een zeer gemotiveerde professional die graag nieuwe uitdagingen aangaat, breng ik een sterke werkethiek, aanpassingsvermogen en uitstekende communicatieve vaardigheden mee. Ik presteer goed in zelfstandige werkomgevingen en leer snel nieuwe vaardigheden. Mijn vermogen om complexe technische details duidelijk uit te leggen aan niet-technische stakeholders zorgt voor naadloze samenwerking en begrip binnen diverse teams.',
+        belgian: 'Belgisch',
+        single: 'Ongehuwd',
+        english: 'Engels',
+        dutch: 'Nederlands',
+        french: 'Frans',
+        arabic: 'Arabisch',
+        present: '2025-Heden',
+        experience1: 'Werkte als Full-Stack Developer bij KU Leuven – Group T binnen de Smart Polymeric Biomaterials Research Group, waar ik webgebaseerde applicaties ontwikkelde en onderhoudde ter ondersteuning van onderzoeksactiviteiten. Samenwerking met multidisciplinaire teams om onderzoeksvereisten te vertalen naar technische oplossingen, wat bijdroeg aan datamanagement, visualisatie en efficiënte onderzoeksworkflows.',
+        experience2: 'Data Analyst Stagiair bij RiskConcile, waar ik met Power BI, Tableau, Excel en Python werkte om data te analyseren en visualiseren voor geïnformeerde besluitvorming.',
+        experience3: 'Samenwerking met VTS Editor om geavanceerde 3D-simulaties te creëren, die meeslepende, Metaverse-achtige beoordelingen leveren voor verbeterde examenervaringen van studenten.',
+        experience4: 'Voltooide een masterproef, "An Empirical Study of Few-Shot Named Entity Recognition Baselines," waarbij machine learning en NLP werden toegepast. Bouwde en testte Python/PyTorch-modellen op meertalige datasets (Engels, Duits, Chinees), waarbij de prestaties en aanpasbaarheid tussen talen werden geanalyseerd.',
+        experience5: 'Creëerde "Spotifit," een Java-gebaseerde software voor mens-machine interactie die Spotify-profielen analyseert om muziek aan te bevelen. Integreerde gebruikersfeedback van verschillende leeftijdsgroepen om de functionaliteit te verfijnen en te verbeteren.',
+        experience6: 'Ontwikkelde "Browsr," een lichtgewicht browser met Java en HTML, die basisweergave van webpagina’s ondersteunt met functies zoals scrollen, paginaverdeling en bladwijzers.',
+        experience7: 'Behandelde IT-infrastructuur door hardware-, software- en netwerkproblemen op te lossen, gebruikersaccounts te beheren, connectiviteit te waarborgen, beveiligingsmaatregelen te implementeren, gegevensback-ups uit te voeren en gebruikersopleiding en documentatie te bieden voor naadloze operaties.',
+        master1title: 'Master in Informatiemanagement',
+        summrymaster1: 'Richt zich op het combineren van business en technologie. Het specialiseerde zich in datamanagement, digitale transformatie, business analytics en het afstemmen van IT op bedrijfsstrategie.',
+        master2title: 'Master in Toegepaste Informatica',
+        summrymaster2: 'Richt zich op de praktische toepassing van informatica principes in real-world scenario’s, met nadruk op softwareontwikkeling, data-analyse en digitale oplossingen.',
+        COMPUS19title: 'Software Ontwikkeling',
+        summryCOMPUS19: 'Deelgenomen aan een hands-on coding en software ontwikkelingsprogramma, waarbij geleerd werd door middel van echte projecten, samenwerking met peers en praktische uitdagingen om vaardigheden in software engineering en IT-probleemoplossing op te bouwen.',
+        bridgingtitle: 'Schakelprogramma in Toegepaste Informatica',
+        summrybridging: 'Een voorbereidend programma dat wiskunde, programmeren, informatica fundamentals en inleidende AI behandelt.',
+        bachelortitle: 'Bachelor in Computerwetenschappen',
+        summrybachelor: 'Solide basis in programmeren, algoritmen, databases en softwareontwikkeling.',
+        other: 'Andere',
+        ledership: 'Leiderschap',
+        communication: 'Communicatie',
+        problemSolving: 'Probleemoplossing',
+        teamCollaboration: 'Teamwerk',
+        timeManagement: 'Tijdbeheer',
+        criticalThinking: 'Kritisch Denken',
+        adaptability: 'Aanpassingsvermogen',
+        creativity: 'Creativiteit'
+      }
+    };
+
+    function setLanguage(lang) {
+      config.language = lang;
+      updateLanguage(lang);
+      
+      // Update language buttons
+      document.getElementById('lang-en').style.background = lang === 'en' ? 'linear-gradient(135deg, #c9a227 0%, #dbb847 100%)' : 'white';
+      document.getElementById('lang-en').style.color = lang === 'en' ? 'white' : '#1e3a5f';
+      
+      document.getElementById('lang-nl').style.background = lang === 'nl' ? 'linear-gradient(135deg, #c9a227 0%, #dbb847 100%)' : 'white';
+      document.getElementById('lang-nl').style.color = lang === 'nl' ? 'white' : '#1e3a5f';
+    }
+
+    function updateLanguage(lang) {
+
+  // Update tab buttons
+  document.querySelectorAll('.tab-text').forEach((el, index) => {
+    const tabNames = ['aboutMe', 'experience', 'education', 'skills'];
+    const key = tabNames[index];
+
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // Update all elements with data-translate
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+
+    if (translations[lang] && translations[lang][key]) {
+      // Use innerHTML to allow long text and formatting
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-translate-placeholder');
+
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
+  // Update title attributes (if you use them later)
+  document.querySelectorAll('[data-translate-title]').forEach(el => {
+    const key = el.getAttribute('data-translate-title');
+
+    if (translations[lang] && translations[lang][key]) {
+      el.title = translations[lang][key];
+    }
+  });
+}
+    function showTab(tabName) {
+      // Hide all content
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.add('hidden');
+      });
+      
+      // Remove active from all tabs
+      document.querySelectorAll('[id^="tab-"]').forEach(el => {
+        el.classList.remove('tab-active');
+        el.classList.add('tab-inactive');
+      });
+      
+      // Show selected content
+      document.getElementById('content-' + tabName).classList.remove('hidden');
+      
+      // Activate selected tab
+      const activeTab = document.getElementById('tab-' + tabName);
+      activeTab.classList.remove('tab-inactive');
+      activeTab.classList.add('tab-active');
+    }
+
+    async function onConfigChange(cfg) {
+      const customFont = cfg.font_family || defaultConfig.font_family;
+      const baseFontStack = 'DM Sans, sans-serif';
+      
+      document.getElementById('display-name').textContent = cfg.full_name || defaultConfig.full_name;
+      document.getElementById('display-name').style.fontFamily = `${customFont}, Crimson Pro, serif`;
+      
+      document.getElementById('display-title').textContent = cfg.job_title || defaultConfig.job_title;
+      document.getElementById('display-title').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      document.getElementById('display-about').textContent = cfg.about_text || defaultConfig.about_text;
+      document.getElementById('display-about').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            cfg.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['full_name', cfg.full_name || defaultConfig.full_name],
+        ['job_title', cfg.job_title || defaultConfig.job_title],
+        ['about_text', cfg.about_text || defaultConfig.about_text]
+      ]);
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d5f8cbff014605a',t:'MTc3MjQ0NTU3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ </body>
+</html>
